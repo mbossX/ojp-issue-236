@@ -1,0 +1,29 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://20.20.20.14:3306/odata-test?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF-8
+    username: odata-test
+    password: a12345678
+  jpa:
+    database: MYSQL
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:  
+    resources:
+      add-mappings: false
+    locale: zh_CN
+  cache:
+    jcache:
+      config: classpath:ehcache.xml
+  servlet:
+    multipart:
+      max-file-size: 512MB
